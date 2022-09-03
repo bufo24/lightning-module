@@ -1,0 +1,92 @@
+{
+  "name": "@t00nday/nestjs-module-example",
+  "version": "2.0.3",
+  "description": "Boiler plate for a nestjs module.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "B'Tunde Aromire",
+  "keywords": [
+    "nestjs example module",
+    "@nestjs/example-module"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "commit": "commit",
+    "format": "prettier --write lib/**/*.ts",
+    "build": "rimraf -rf dist && tsc -p tsconfig.json",
+    "lint": "eslint lib/**/*.ts --fix",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "test:unit": "jest",
+    "test": "npm run test:integration",
+    "test:integration": "jest --config ./test/jest-e2e.config.json --runInBand",
+    "test:cov": "jest --config ./test/jest-e2e.config.json --runInBand --coverage",
+    "prerelease": "npm run build",
+    "release": "dotenv release-it --"
+  },
+  "dependencies": {
+    "husky": "6.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "12.0.1",
+    "@commitlint/config-conventional": "12.0.1",
+    "@commitlint/prompt-cli": "12.0.1",
+    "@compodoc/compodoc": "1.1.11",
+    "@nestjs/common": "7.6.15",
+    "@nestjs/core": "7.6.15",
+    "@nestjs/platform-express": "7.6.15",
+    "@nestjs/testing": "7.6.15",
+    "@types/jest": "26.0.22",
+    "@types/node": "13.13.48",
+    "@types/rimraf": "3.0.0",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
+    "dotenv-cli": "4.0.0",
+    "eslint": "7.23.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "jest": "26.6.3",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "reflect-metadata": "0.1.13",
+    "release-it": "14.5.0",
+    "rimraf": "3.0.2",
+    "rxjs": "6.6.7",
+    "ts-jest": "26.5.4",
+    "typescript": "4.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toondaey/nestjs-module-boilerplate.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toondaey/nestjs-module-boilerplate/issues"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "lib/**/*.ts": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.10.0 || ^7.0.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.0.0"
+  },
+  "homepage": "https://github.com/toondaey/nestjs-module-boilerplate#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
