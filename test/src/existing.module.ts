@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { ExampleConfigService } from './example-config.service';
+import { LightningConfigService } from './lightning-config.service';
 
 @Module({
-    providers: [ExampleConfigService],
-    exports: [ExampleConfigService],
+    providers: [LightningConfigService],
+    exports: [LightningConfigService],
 })
 export class ExistingModule {}

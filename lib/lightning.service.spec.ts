@@ -1,27 +1,27 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { ExampleService } from './example.service';
-import { EXAMPLE_OPTIONS_TOKEN } from './example.constants';
+import { LightningService } from './lightning.service';
+import { LND_REST } from './lightning.constants';
 
 describe('ExampleService', () => {
     let module: TestingModule;
-    let exampleService: ExampleService;
+    let service: LightningService;
 
     beforeEach(async () => {
         module = await Test.createTestingModule({
             providers: [
-                ExampleService,
+                LightningService,
                 {
-                    provide: EXAMPLE_OPTIONS_TOKEN,
+                    provide: LND_REST,
                     useValue: jest.fn(),
                 },
             ],
         }).compile();
 
-        exampleService = module.get<ExampleService>(ExampleService);
+        service = module.get<LightningService>(LightningService);
     });
 
     it('should be defined', () => {
-        expect(exampleService).toBeDefined();
+        expect(service).toBeDefined();
     });
 });

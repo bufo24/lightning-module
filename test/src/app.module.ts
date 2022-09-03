@@ -1,17 +1,17 @@
 import { Module, DynamicModule } from '@nestjs/common';
 
-import { ExampleModule } from '../../lib/example.module';
+import { LightningModule } from '../../lib/lightning.module';
 import { ExistingModule } from './existing.module';
-import { ExampleConfigService } from './example-config.service';
+import { LightningConfigService } from './lightning-config.service';
 
 @Module({
-    exports: [ExampleModule],
+    exports: [LightningModule],
 })
 export class AppModule {
     static withRegister(): DynamicModule {
         return {
             module: AppModule,
-            imports: [ExampleModule.register({})],
+            imports: [LightningModule.register({})],
         };
     }
 
@@ -19,7 +19,7 @@ export class AppModule {
         return {
             module: AppModule,
             imports: [
-                ExampleModule.registerAsync({
+                LightningModule.registerAsync({
                     useFactory: () => ({}),
                 }),
             ],
@@ -30,8 +30,8 @@ export class AppModule {
         return {
             module: AppModule,
             imports: [
-                ExampleModule.registerAsync({
-                    useClass: ExampleConfigService,
+                LightningModule.registerAsync({
+                    useClass: LightningConfigService,
                 }),
             ],
         };
@@ -41,8 +41,8 @@ export class AppModule {
         return {
             module: AppModule,
             imports: [
-                ExampleModule.registerAsync({
-                    useExisting: ExampleConfigService,
+                LightningModule.registerAsync({
+                    useExisting: LightningConfigService,
                     imports: [ExistingModule],
                 }),
             ],

@@ -1,3 +1,3 @@
-export * from './example.module';
-export * from './example.service';
-export * from './example.interfaces';
+export * from './lightning.module';
+export * from './lightning.service';
+export * from './lightning.interfaces';

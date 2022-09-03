@@ -1,13 +1,13 @@
 {
-  "name": "@t00nday/nestjs-module-example",
-  "version": "2.0.3",
-  "description": "Boiler plate for a nestjs module.",
+  "name": "@bufo/lightning-module",
+  "version": "0.0.1",
+  "description": "Lightning module for NestJS",
   "main": "index.js",
   "types": "index.d.ts",
-  "author": "B'Tunde Aromire",
+  "author": "Bufo",
   "keywords": [
-    "nestjs example module",
-    "@nestjs/example-module"
+    "nestjs lightning module",
+    "@bufo/lightning-module"
   ],
   "directories": {
     "lib": "lib",
@@ -30,6 +30,8 @@
     "release": "dotenv release-it --"
   },
   "dependencies": {
+    "axios": "0.27.2",
+    "https": "1.0.0",
     "husky": "6.0.0"
   },
   "devDependencies": {
@@ -62,11 +64,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toondaey/nestjs-module-boilerplate.git"
+    "url": "git+https://github.com/bufo24/lightning-module.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/toondaey/nestjs-module-boilerplate/issues"
+    "url": "https://github.com/bufo24/lightning-module/issues"
   },
   "husky": {
     "hooks": {
@@ -85,7 +87,7 @@
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0"
   },
-  "homepage": "https://github.com/toondaey/nestjs-module-boilerplate#readme",
+  "homepage": "https://github.com/bufo24/lightning-module",
   "publishConfig": {
     "access": "public"
   }
